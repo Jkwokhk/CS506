@@ -19,3 +19,6 @@ Due to the high dimensionality of our data, we plan on using scatter plots to mo
 
 ## Test Plan
 We plan on randomly selecting 20% of the records from the Kaggle dataset for testing and 80% of the records for training.
+
+##Google Colab link:
+https://colab.research.google.com/drive/13i5jrVx0f_AFSONIkNkGbxOgZwippBAg?usp=sharing
