@@ -15,7 +15,28 @@ We used multi-layer perceptron which works on a "bag of words" model that tests 
 ## Visualization
 Due to the high dimensionality of our data, we used scatter plots to model relationships between 2 features and T-SNE plots for aggregated data views. We used word clouds and bar charts to visualize the frequencies of certain key phrases that appeared in the data. As for the word clouds, we created a dictionary that mapped words to their importance using TF-IDF. We filtered out function words (i.e "the", "and", "an", etc.) and have two word cloud models: one that visualizes general words and one that focuses only on adjectives. In conjuction with the word cloud models, we also include bar charts to highlight the importance of the top 20 features. 
 
-![Word Cloud of Important Features for Positive Reviews for PAYDAY 2](assets/payday2_all_wordcloud.png)
+Here's the word cloud and bar charts for top "general" words found in reviews of PAYDAY 2. 
+<div style="display: flex; justify-content: space-around;">
+    <img src="assets/payday2_all_wordcloud.png" alt="Word Cloud with all words (besides function words) for PAYDAY 2" width="45%">
+    <img src="assets/Payday2_allwords_bar.png" alt="Corresponding bar chart of Top 20 words" width="45%">
+</div>
+
+Here's the word cloud and bar charts for top adjectives found in those same reviews of PAYDAY 2. 
+<div style="display: flex; justify-content: space-around;">
+    <img src="assets/payday2_adj.png" alt="Word Cloud with top adjectives for PAYDAY 2" width="45%">
+    <img src="assets/payday2_adj_bar.png" alt="Corresponding bar chart of Top 20 words" width="45%">
+</div>
+
+We used barcharts and a scatterplot to compare the length of the review and whether or not the review was "Voted Up" or "Voted Down" (in other words, whether or not it was a positive review).
+<div style="display: flex; justify-content: space-around;">
+    <img src="assets/median_rev_len_vs_vote_status.png" alt="Bar chart comparing median review length with the review's vote status." width="45%">
+    <img src="assets/scatter.png" alt="Scatterplot comparing median review length with the review's vote status." width="45%">
+</div>
+
+
+
+
+
 
 
 
