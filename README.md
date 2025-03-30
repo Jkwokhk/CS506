@@ -27,7 +27,7 @@ Here's the word cloud and bar charts for top adjectives found in those same revi
     <img src="assets/payday2_adj_bar.png" alt="Corresponding bar chart of Top 20 words" width="45%">
 </div>
 
-We used barcharts and a scatterplot to compare the length of the review and whether or not the review was "Voted Up" or "Voted Down" (in other words, whether or not it was a positive review).
+We used bar charts and a scatterplot to compare the length of the review and whether or not the review was "Voted Up" or "Voted Down" (in other words, whether or not it was a positive review).
 <div style="display: flex; justify-content: space-around;">
     <img src="assets/median_rev_len_vs_vote_status.png" alt="Bar chart comparing median review length with the review's vote status." width="45%">
     <img src="assets/scatter.png" alt="Scatterplot comparing median review length with the review's vote status." width="45%">
