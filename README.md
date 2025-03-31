@@ -9,6 +9,9 @@ This project aims to analyze specific features in the description of a game revi
 ## Data
 We used the following dataset from Kaggle: https://www.kaggle.com/datasets/kieranpoc/steam-reviews/data. The dataset contains records for individual reviews, as well as key features for these reviews such as what game they reviewed and a steam generated helpfulness score. We also used the Steam API to measure playercounts over time. We will primarily focus on the content of the user review.
 
+## Feature Vectorization
+By making use of models such as Bag of words, TF-IDF, and Latent Semantic Analysis, we can turn the contents of each review into meaningful features for our models. Bag of words and TF-IDF represent two different methods of measuring vocabulary frequency across documents. Via LSA, it becomes possible to computationally reason about the semantics of particular words. LSA creates a low rank approximation of the data that allows similar words to be captured.
+
 ## Modeling
 We pre-processed the data by first filtering out English reviews only and from a particular game to limit the size od our data. We then represented our data using Bag of Words and TF-IDF to capture word frequencies/importance, respectively. After that, we use Naive Bayes to determine the word probabilities in each class (Voted Up / Voted Down)
 
