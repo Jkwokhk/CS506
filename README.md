@@ -1,4 +1,5 @@
 ## Steam Review Sentiment Analysis
+Link to Youtube Video: https://youtu.be/9W7UCZSQ-lc
 
 ## Description
 Steam is an online marketplace where consumers can purchase digital commodities, primarily video game keys. One distinct characteristic of Steam is its review system, where users can choose to recommend or not recommend a game they have played to other prospective buyers. The goal of this project is to conduct sentiment analysis on steam reviews to see how they might predict game review positivity.
@@ -64,6 +65,7 @@ We used a 2D and 3D t-SNE visualization of the reviews, which shows that recomme
 
 ## Test Plan
 We plan on randomly selecting 20% of the records from the Kaggle dataset for testing and 80% of the records for training.
+In the future, we plan on choosing alternative models that account for multiple words, word order and grammatical choices.
 
 ##Google Colab link:
 https://colab.research.google.com/drive/13i5jrVx0f_AFSONIkNkGbxOgZwippBAg?usp=sharing
