@@ -1,0 +1,3 @@
+# Ignore venv and results
+steam_env/
+results/
