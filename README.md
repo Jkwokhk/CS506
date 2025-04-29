@@ -67,5 +67,8 @@ We used a 2D and 3D t-SNE visualization of the reviews, which shows that recomme
 We plan on randomly selecting 20% of the records from the Kaggle dataset for testing and 80% of the records for training.
 In the future, we plan on choosing alternative models that account for multiple words, word order and grammatical choices.
 
-##Google Colab link:
+##  Google Colab link:
 https://colab.research.google.com/drive/13i5jrVx0f_AFSONIkNkGbxOgZwippBAg?usp=sharing
+
+## Link to pretrained model:
+https://drive.google.com/file/d/1Uat70L-x_utodAIRKzGQFxvv-u9JlcRD/view?usp=sharing 
