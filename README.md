@@ -1,6 +1,22 @@
 ## How to build and run the code
 Run "make install" in the terminal. This will run the Makefile, creating a folder for the virtual environment, installing dependencies from requirements.txt, and register the virtual environment as a Jupyter kernel named "Python (venv)". If running on VS code, open the notebook. In the top right, select "Python (venv)". Then, run the notebook as desired. If you are using our pretrained BERT model, simply run the code blocks until you create the documents and labels, then go down to the code block which loads the model.
 
+If the makefile does not work, try the following steps:
+1. (optional) Create a virtual environement
+Run "python -m venv venv" in the VS code terminal
+
+2. (optional) Activate the environment
+Mac: source .venv/bin/activate
+Windows Powershell: .venv\Scripts\Activate.ps1
+
+3. Install dependencies
+Run "pip install -r requirements.txt"
+
+4. Register environment for notebook use
+Run "pip install ipykernel"
+Run "python -m ipykernel install --user --name=venv --display-name "Python (.venv)""
+
+
 ## Steam Review Sentiment Analysis
 Link to Midterm Youtube Video: https://youtu.be/9W7UCZSQ-lc
 
