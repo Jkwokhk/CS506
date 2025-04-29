@@ -1,5 +1,8 @@
+## How to build and run the code
+Run "make install" in the terminal. This will run the Makefile, creating a folder for the virtual environment, installing dependencies from requirements.txt, and register the virtual environment as a Jupyter kernel named "Python (venv)". If running on VS code, open the notebook. In the top right, select "Python (venv)". Then, run the notebook as desired. If you are using our pretrained BERT model, simply run the code blocks until you create the documents and labels, then go down to the code block which loads the model.
+
 ## Steam Review Sentiment Analysis
-Link to Youtube Video: https://youtu.be/9W7UCZSQ-lc
+Link to Midterm Youtube Video: https://youtu.be/9W7UCZSQ-lc
 
 ## Description
 Steam is an online marketplace where consumers can purchase digital commodities, primarily video game keys. One distinct characteristic of Steam is its review system, where users can choose to recommend or not recommend a game they have played to other prospective buyers. The goal of this project is to conduct sentiment analysis on steam reviews to see how they might predict game review positivity.
