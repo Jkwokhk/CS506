@@ -74,8 +74,12 @@ We used a 2D and 3D t-SNE visualization of the reviews, which shows that recomme
 </div>
 <br>
 
-
-
+After creating a BERT model, we analyzed the attention heads of the model, telling us the relationships between words that the model keys in on for given sample sentences. Below is an example of a sample negative review, where the model appears to do well identifying some low level semantic relationships between the words. For example, there exist strong attention heads between the words "hard to recommend" and "not a fan" (although the strength is overshadowed by the attention heads to the line separator that comes later). There are other times when the model isn't quite sure how to handle the language, as in the latter picture. For example, "text art" can be common among steam reviews. When faced with text art, the uniform symbols are quite difficult for the model to identify key relationships, instead opting to generally create attention heads with tokens close in proximity.
+<div style="display: flex; justify-content: space-around;">
+    <img src="assets/layer_7_sample_sentence.jpg" alt="layer 7 sample sentence" width="45%">
+    <img src="assets/review_art.jpg" alt="review art" width="45%">
+</div>
+<br>
 
 
 
