@@ -52,7 +52,7 @@ We filtered out common function words (e.g., “the,” “and,” “an”) and
 - Review-length comparisons and dimensionality reduction using t-SNE.
 
 ## Top Informative Words for Sentiment  
-This bar chart shows the **top 20 most influential words** based on their coefficients in the **Logistic Regression classifier** trained on TF-IDF features. Words pushing reviews toward “Recommended” are shown in green, while those nudging toward “Not Recommended” are in red. These weights provide insight into how specific vocabulary (e.g., “fun,” “stealth,” “bank” vs. “microtransactions,” “shame”) correlate with user sentiment.
+This bar chart shows the **top 20 most influential words** based on their coefficients in the **Logistic Regression classifier** trained on TF-IDF features. Words pushing reviews toward “Recommended” are shown in green, while those nudging toward "Not Recommended" are in red. These weights provide insight into how specific vocabulary (e.g., "awesome," "masterpiece," "genre," vs. "boring," "potential") correlate with user sentiment.
 
 <div style="display: flex; justify-content: space-around;">
     <img src="assets/topN_logreg.png" alt="Top Logistic Regression TF-IDF Words" width="100%">
@@ -60,10 +60,10 @@ This bar chart shows the **top 20 most influential words** based on their coeffi
 <br>
 
 ## Word Cloud (BoW + Logistic Regression)  
-Using a BoW-based Logistic Regression model, we generated a word cloud highlighting the words that **most strongly pushed reviews toward a recommendation**. Larger words indicate a higher positive influence. Words like “stealth” and  "story" are emphasized — suggesting that positively perceived gameplay elements tend to dominate in recommended reviews.
+Using a BoW-based Logistic Regression model, we generated a word cloud highlighting the words that **most strongly pushed reviews toward a recommendation**. Larger words indicate a higher positive influence. Words like "stealth" and  "story" are emphasized — suggesting that positively perceived gameplay elements tend to dominate in recommended reviews.
 
 ## Top Informative Words (BoW + LogReg)  
-This BoW-based coefficient bar chart complements the word cloud by showing both **positive and negative sentiment drivers**. It confirms that criticisms related to monetization and content delivery (e.g., “microtransactions,” “dlc,” “com,” “shame”) are some of the strongest predictors of negative sentiment.
+This BoW-based coefficient bar chart complements the word cloud by showing both **positive and negative sentiment drivers**. It confirms that criticisms related to monetization and content delivery (e.g., "money," "cash," "potential," "repetitive") are some of the strongest predictors of negative sentiment.
 
 <div style="display: flex; justify-content: space-around;">
     <img src="assets/bow_logreg_wordcloud.png" alt="BoW Word Cloud for Positive Sentiment Words" width="45%">
