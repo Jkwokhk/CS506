@@ -17,12 +17,12 @@ Run "pip install ipykernel"
 Run "python -m ipykernel install --user --name=venv --display-name "Python (.venv)""
 
 ## How to replicate BERT results
-Simply download one of the datasets from Kaggle at the link in the data section. We recommend trying the dataset with weighted scores above 0.8 as it is already quite large and our notebook is hardcoded to accept a file with the same name as this dataset. Then, run blocks 1-16 of main.ipynb, which preprocesses the data and creates a BERT model. If you downloaded our pretrained model below, run blocks 1-15 and then run block 18 (which loads the model). Code blocks 19-22 can be run to evaluate the model afterwards.
+Simply download one of the datasets from Kaggle at the link in the data section. Put the data in the directory, then run the cleaned.py file to get the cleaned data with only english records. We recommend trying the dataset with weighted scores above 0.8 as it is already quite large and our cleaned.py file is hardcoded to accept a file with the same name as this dataset. We also offer a subset of the data "cleaned_data.csv" which removes the need to run this file. Note that this was not the data we tested with but a small subset of 10 records. Then, run blocks 1-16 of main.ipynb, which preprocesses the data and creates a BERT model. If you downloaded our pretrained model below, run blocks 1-15 and then run block 18 (which loads the model). Code blocks 19-22 can be run to evaluate the model afterwards.
+
+The yaml file in our code should automatically run the notebook after each push. However, using our pretrained model does not require running all blocks.
 
 ## Steam Review Sentiment Analysis
 Link to Midterm Youtube Video: https://youtu.be/9W7UCZSQ-lc
-
-Link to Final Youtube Video: https://youtu.be/GRjRmayWeyo
 
 ## Description
 Steam is an online marketplace where consumers can purchase digital commodities, primarily video game keys. One distinct characteristic of Steam is its review system, where users can choose to recommend or not recommend a game they have played to other prospective buyers. The goal of this project is to conduct sentiment analysis on steam reviews to see how they might predict game review positivity.
@@ -41,65 +41,47 @@ Bag of words and LSA did not work well with our Naive Bayes model (see modeling)
 Between the midterm and the final, we tried implementing VADER along with both the bag of words and TF-IDF feature matrices. However, VADER provided no significant increases in performance at a high computational cost. Lastly, our BERT model used a base BERT tokenizer that considered the text uncased.
 
 ## Modeling
-For our midterm report, we pre-processed the data by first filtering out English reviews only to limit the size of our data and chose the game PAYDAY 2 to be our focus. We then represented our data using TF-IDF to capture word frequencies and importance, respectively. After that, we created a Naive Bayes classifier to model our data. We chose Naive Bayes to be the best approach since it assigns probabilities to words and allows us to find the best features or words that people say are good about the game. However, we recognize that since most of the PAYDAY 2 reviews contains mostly positive reviews, the accuracy may not be representative of the data.
+We pre-processed the data by first filtering out English reviews only to limit the size of our data and chose the game PAYDAY 2 to be our focus. We then represented our data using TF-IDF to capture word frequencies and importance, respectively. After that, we created a Naive Bayes classifier to model our data. We chose Naive Bayes to be the best approach since it assigns probabilities to words and allows us to find the best features or words that people say are good about the game. However, we recognize that since most of the PAYDAY 2 reviews contains mostly positive reviews, the accuracy may not be representative of the data.
 
 By the end of the project, we had expanded to all english reviews regardless of game with a weighted helpfulness score above 0.8. Still, this amounted to hundreds of thousands of records. Some new models we tried included linear regression, logistic regression, and BERT. BERT performed by far the best, with a testing set accuracy and f-1 score of 0.938 and 0.967 respectively.
 
 ## Visualization
-We used word clouds, scatter plots, and bar charts to explore how different textual features contributed to the prediction of review sentiment for **PAYDAY 2** on Steam. Unlike the earlier Naive Bayes approach, we now use **Logistic Regression**, which allows us to interpret each word's influence using its learned model coefficient.
+We used word clouds, scatter charts and bar charts to visualize the frequencies of certain key phrases that appeared in the data. As for the word clouds, we created a dictionary that mapped words to their importance using TF-IDF. We filtered out function words (i.e "the", "and", "an", etc.) and have two word cloud models: one that visualizes general words and one that focuses only on adjectives. In conjuction with the word cloud models, we also include bar charts to highlight the importance of the top 20 features.
 
-We filtered out common function words (e.g., “the,” “and,” “an”) and created multiple visualization types:
-- A bar chart of top influential words based on positive and negative weights.
-- Word clouds highlighting words with strong sentiment leanings.
-- Additional views using both **TF-IDF** and **Bag-of-Words (BoW)** representations.
-- Adjective-specific breakdowns, since adjectives are typically sentiment-rich.
-- Review-length comparisons and dimensionality reduction using t-SNE.
-
-## Top Informative Words for Sentiment  
-This bar chart shows the **top 20 most influential words** based on their coefficients in the **Logistic Regression classifier** trained on TF-IDF features. Words pushing reviews toward “Recommended” are shown in green, while those nudging toward "Not Recommended" are in red. These weights provide insight into how specific vocabulary (e.g., "awesome," "masterpiece," "genre," vs. "boring," "potential") correlate with user sentiment.
-
+Here is a bar chart displaying the top words most informative to the Naive Bayes classifier, showing the highest contributors to predicting recommended (green) and not recommended (red) reviews. Many of these words reflect PAYDAY 2-specific vocabulary and known platform sentiments.
 <div style="display: flex; justify-content: space-around;">
-    <img src="assets/topN_logreg.png" alt="Top Logistic Regression TF-IDF Words" width="100%">
+    <img src="assets/topN.png" alt="Word Cloud with all words (besides function words) for PAYDAY 2" width="100%">
 </div>
 <br>
 
-## Word Cloud (BoW + Logistic Regression)  
-Using a BoW-based Logistic Regression model, we generated a word cloud highlighting the words that **most strongly pushed reviews toward a recommendation**. Larger words indicate a higher positive influence. Words like "stealth" and  "story" are emphasized — suggesting that positively perceived gameplay elements tend to dominate in recommended reviews.
-
-## Top Informative Words (BoW + LogReg)  
-This BoW-based coefficient bar chart complements the word cloud by showing both **positive and negative sentiment drivers**. It confirms that criticisms related to monetization and content delivery (e.g., "money," "cash," "potential," "repetitive") are some of the strongest predictors of negative sentiment.
-
+Here's the word cloud and bar charts for top "general" words found in reviews of PAYDAY 2. 
 <div style="display: flex; justify-content: space-around;">
-    <img src="assets/bow_logreg_wordcloud.png" alt="BoW Word Cloud for Positive Sentiment Words" width="45%">
-    <img src="assets/topN_bow.png" alt="BoW Logistic Regression Top Features" width="45%">
+    <img src="assets/payday2_all_wordcloud.png" alt="Word Cloud with all words (besides function words) for PAYDAY 2" width="45%">
+    <img src="assets/Payday2_allwords_bar.png" alt="Corresponding bar chart of Top 20 words" width="45%">
 </div>
 <br>
 
-## Top 20 Positive and Negative Features (Logistic Regression)
-
-Here is a bar chart displaying the top 20 most positively and negatively weighted features learned by the Logistic Regression classifier trained on TF-IDF. Words on the right push predictions toward "Recommended" (positive sentiment), while words on the left push predictions toward "Not Recommended" (negative sentiment). Many of these words clearly reflect common user sentiment patterns in Steam reviews, with terms like "amazing," "perfect," and "awesome" strongly associated with positive recommendations, while terms like "boring," "broken," and "unfortunately" are often present in negative reviews.
-
+Here's the word cloud and bar charts for top adjectives found in those same reviews of PAYDAY 2. 
 <div style="display: flex; justify-content: space-around;">
-    <img src="assets/top20NP.png" alt="Top 20 Most Positive and Negative Logistic Regression Coefficients" width="100%">
+    <img src="assets/payday2_adj.png" alt="Word Cloud with top adjectives for PAYDAY 2" width="45%">
+    <img src="assets/payday2_adj_bar.png" alt="Corresponding bar chart of Top 20 words" width="45%">
 </div>
 <br>
 
-## Review Length vs. Sentiment  
-We analyzed the **median review length** by sentiment label, finding that **negative reviews tend to be significantly longer** than positive ones. This likely reflects that dissatisfied players are more inclined to explain or justify their rating in greater detail.
-
+We used bar charts and a scatterplot to compare the length of the review and whether or not the review was "Voted Up" or "Voted Down" (in other words, whether or not it was a positive review).
 <div style="display: flex; justify-content: space-around;">
-    <img src="assets/medianLength.png" alt="Median Review Length by Vote Status" width="45%">
+    <img src="assets/median_rev_len_vs_vote_status.png" alt="Bar chart comparing median review length with the review's vote status." width="45%">
+    <img src="assets/scatter.png" alt="Scatterplot comparing median review length with the review's vote status." width="45%">
 </div>
 <br>
 
-A scatterplot further shows this distribution, confirming a trend where short reviews are often positive, while longer reviews skew negative.
-
+We used a 2D and 3D t-SNE visualization of the reviews, which shows that recommended and not recommended reviews do not form distinct clusters, suggesting sentiment is distributed subtly rather than forming separable groups.
 <div style="display: flex; justify-content: space-around;">
-    <img src="assets/scatterLength.png" alt="Review Length vs Vote Status" width="45%">
+    <img src="assets/2dSNE.png" alt="Bar chart comparing median review length with the review's vote status." width="45%">
+    <img src="assets/3dSNE.png" alt="Scatterplot comparing median review length with the review's vote status." width="45%">
 </div>
 <br>
 
-## BERT Visualizations
 After creating a BERT model, we analyzed the attention heads of the model, telling us the relationships between words that the model keys in on for given sample sentences. Below is an example of a sample negative review, where the model appears to do well identifying some low level semantic relationships between the words. For example, there exist strong attention heads between the words "hard to recommend" and "not a fan" (although the strength is overshadowed by the attention heads to the line separator that comes later). There are other times when the model isn't quite sure how to handle the language, as in the latter picture. For example, "text art" can be common among steam reviews. When faced with text art, the uniform symbols are quite difficult for the model to identify key relationships, instead opting to generally create attention heads with tokens close in proximity.
 <div style="display: flex; justify-content: space-around;">
     <img src="assets/layer_7_sample_sentence.jpg" alt="layer 7 sample sentence" width="45%">
@@ -112,6 +94,8 @@ Here is a classification matrix of the BERT model on a random sample of 10000 re
     <img src="assets/bert_confusion_matrix.jpg" alt="confusion matrix" width="45%">
 </div>
 <br>
+
+
 
 ## Test Plan
 We plan on randomly selecting 20% of the records from the Kaggle dataset for testing and 80% of the records for training.
