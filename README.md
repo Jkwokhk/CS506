@@ -16,6 +16,8 @@ Run "pip install -r requirements.txt"
 Run "pip install ipykernel"
 Run "python -m ipykernel install --user --name=venv --display-name "Python (.venv)""
 
+## How to replicate BERT results
+Simply download one of the datasets from Kaggle at the link in the data section. We recommend trying the dataset with weighted scores above 0.8 as it is already quite large and our notebook is hardcoded to accept a file with the same name as this dataset. Then, run blocks 1-16 of main.ipynb, which preprocesses the data and creates a BERT model. If you downloaded our pretrained model below, run blocks 1-15 and then run block 18 (which loads the model). Code blocks 19-22 can be run to evaluate the model afterwards.
 
 ## Steam Review Sentiment Analysis
 Link to Midterm Youtube Video: https://youtu.be/9W7UCZSQ-lc
