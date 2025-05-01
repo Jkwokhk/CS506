@@ -71,19 +71,12 @@ This BoW-based coefficient bar chart complements the word cloud by showing both 
 </div>
 <br>
 
-## Adjective Analysis  
-We filtered the TF-IDF feature set for **adjectives only**, then ranked them by absolute model coefficient. This lets us highlight words that describe perceived **quality, experience, and tone**. Common high-impact adjectives included “average,” “best,” “free,” “great,” and “stupid” — words that sharply define player emotion and opinion.
+## Top 20 Positive and Negative Features (Logistic Regression)
+
+Here is a bar chart displaying the top 20 most positively and negatively weighted features learned by the Logistic Regression classifier trained on TF-IDF. Words on the right push predictions toward "Recommended" (positive sentiment), while words on the left push predictions toward "Not Recommended" (negative sentiment). Many of these words clearly reflect common user sentiment patterns in Steam reviews, with terms like "amazing," "perfect," and "awesome" strongly associated with positive recommendations, while terms like "boring," "broken," and "unfortunately" are often present in negative reviews.
 
 <div style="display: flex; justify-content: space-around;">
-    <img src="assets/top20adj.png" alt="Top 20 Adjectives by Importance" width="45%">
-</div>
-<br>
-
-## Top Features by TF-IDF Weight  
-In addition to coefficient-based rankings, we also visualized the top TF-IDF features based purely on their weight (not direction). These included frequent terms like “game,” “10,” “payday,” “drill,” and “play,” which indicate prominence rather than sentiment.
-
-<div style="display: flex; justify-content: space-around;">
-    <img src="assets/top20features.png" alt="Top 20 Features by Importance" width="45%">
+    <img src="assets/top20NP.png" alt="Top 20 Most Positive and Negative Logistic Regression Coefficients" width="100%">
 </div>
 <br>
 
