@@ -60,7 +60,7 @@ This bar chart shows the **top 20 most influential words** based on their coeffi
 <br>
 
 ## Word Cloud (BoW + Logistic Regression)  
-Using a BoW-based Logistic Regression model, we generated a word cloud highlighting the words that **most strongly pushed reviews toward a recommendation**. Larger words indicate a higher positive influence. Words like “stealth,” “bank,” “rob,” and “heist” are emphasized — suggesting that positively perceived gameplay elements tend to dominate in recommended reviews.
+Using a BoW-based Logistic Regression model, we generated a word cloud highlighting the words that **most strongly pushed reviews toward a recommendation**. Larger words indicate a higher positive influence. Words like “stealth” and  "story" are emphasized — suggesting that positively perceived gameplay elements tend to dominate in recommended reviews.
 
 ## Top Informative Words (BoW + LogReg)  
 This BoW-based coefficient bar chart complements the word cloud by showing both **positive and negative sentiment drivers**. It confirms that criticisms related to monetization and content delivery (e.g., “microtransactions,” “dlc,” “com,” “shame”) are some of the strongest predictors of negative sentiment.
