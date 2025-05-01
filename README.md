@@ -81,8 +81,11 @@ After creating a BERT model, we analyzed the attention heads of the model, telli
 </div>
 <br>
 
-
-
+Here is a classification matrix of the BERT model on a random sample of 10000 reviews (the classification matrix took extremely long to load) and some performance metrics. Unfortunately, it seems that the model does not handle negative reviews very well. That is, there are many false positives in the confusion matrix and the model appears to guess that the review is positive almost all of the time. There may be some room for optimism, as the testing accuracy on the whole testing set and f1-score were 0.938 and 0.967 respectively.
+<div style="display: flex; justify-content: space-around;">
+    <img src="assets/bert_confusion_matrix.jpg" alt="confusion matrix" width="45%">
+</div>
+<br>
 
 
 
