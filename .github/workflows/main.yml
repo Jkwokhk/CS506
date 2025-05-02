@@ -25,6 +25,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Register kernel
+        run: |
+          python -m ipykernel install --user --name python3 --display-name "Python 3"
+
       - name: Run notebook with Papermill
         run: |
-          papermill main.ipynb output.ipynb
+          papermill main.ipynb output.ipynb -k python3
