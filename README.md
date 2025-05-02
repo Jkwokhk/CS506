@@ -24,6 +24,7 @@ The yaml file in our code should automatically run the notebook after each push.
 
 ## Steam Review Sentiment Analysis
 Link to Midterm Youtube Video: https://youtu.be/9W7UCZSQ-lc
+Link to Final Youtube Video: [youtube.com/watch?v=GRjRmayWeyo](https://www.youtube.com/watch?v=GRjRmayWeyo)
 
 ## Description
 Steam is an online marketplace where consumers can purchase digital commodities, primarily video game keys. One distinct characteristic of Steam is its review system, where users can choose to recommend or not recommend a game they have played to other prospective buyers. The goal of this project is to conduct sentiment analysis on steam reviews to see how they might predict game review positivity.
