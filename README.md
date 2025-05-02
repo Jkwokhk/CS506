@@ -7,7 +7,8 @@ Run "python -m venv venv" in the VS code terminal
 
 2. (optional) Activate the environment
 Mac: source .venv/bin/activate
-Windows Powershell: .venv\Scripts\Activate.ps1
+Windows Powershell: . .venv\Scripts\Activate.ps1
+
 
 3. Install dependencies
 Run "pip install -r requirements.txt"
