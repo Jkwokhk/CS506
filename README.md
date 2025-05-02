@@ -24,6 +24,7 @@ The yaml file in our code should automatically run the notebook after each push.
 
 ## Steam Review Sentiment Analysis
 Link to Midterm Youtube Video: https://youtu.be/9W7UCZSQ-lc
+
 Link to Final Youtube Video: [youtube.com/watch?v=GRjRmayWeyo](https://www.youtube.com/watch?v=GRjRmayWeyo)
 
 ## Description
